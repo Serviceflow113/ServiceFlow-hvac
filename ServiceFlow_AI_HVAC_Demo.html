@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ServiceFlow HVAC — Demo</title>
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: #172033;
+      background: #f7f9fc;
+    }
+    a { color: inherit; text-decoration: none; }
+    .nav {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(255,255,255,.96);
+      border-bottom: 1px solid #e7ebf2;
+      backdrop-filter: blur(10px);
+    }
+    .nav-inner {
+      max-width: 1120px; margin: auto; padding: 18px 24px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .brand { font-size: 21px; font-weight: 800; letter-spacing: -.5px; }
+    .brand span { color: #2563eb; }
+    .links { display: flex; gap: 26px; font-size: 14px; font-weight: 600; color: #536075; }
+    .hero {
+      background: linear-gradient(135deg, #0f2f63 0%, #1769aa 58%, #2a8bd6 100%);
+      color: white;
+    }
+    .hero-inner {
+      max-width: 1120px; margin: auto; padding: 88px 24px 92px;
+      display: grid; grid-template-columns: 1.25fr .75fr; gap: 48px; align-items: center;
+    }
+    .eyebrow {
+      display: inline-block; padding: 8px 12px; border-radius: 999px;
+      background: rgba(255,255,255,.14); font-size: 13px; font-weight: 700;
+      margin-bottom: 18px;
+    }
+    h1 { font-size: clamp(42px, 6vw, 66px); line-height: 1.02; margin: 0 0 20px; letter-spacing: -2.5px; }
+    .hero p { max-width: 620px; font-size: 19px; line-height: 1.65; color: #e4efff; margin: 0 0 30px; }
+    .cta {
+      display: inline-block; background: white; color: #12508b;
+      padding: 15px 22px; border-radius: 10px; font-weight: 800;
+      box-shadow: 0 12px 30px rgba(0,0,0,.18);
+    }
+    .hero-card {
+      background: white; color: #172033; border-radius: 20px; padding: 28px;
+      box-shadow: 0 24px 60px rgba(0,0,0,.22);
+    }
+    .hero-card h3 { margin: 0 0 12px; font-size: 21px; }
+    .hero-card p { color: #667085; font-size: 15px; margin: 0 0 18px; line-height: 1.5; }
+    .check { padding: 11px 0; border-top: 1px solid #edf0f5; font-size: 14px; font-weight: 600; }
+    section { padding: 76px 24px; }
+    .section-inner { max-width: 1120px; margin: auto; }
+    .section-title { text-align: center; margin-bottom: 42px; }
+    .section-title h2 { font-size: 36px; margin: 0 0 10px; letter-spacing: -1px; }
+    .section-title p { color: #667085; margin: 0; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .card {
+      background: white; border: 1px solid #e7ebf2; border-radius: 16px;
+      padding: 26px; box-shadow: 0 8px 24px rgba(18,32,51,.05);
+    }
+    .icon {
+      width: 44px; height: 44px; border-radius: 12px; background: #eaf2ff;
+      display: grid; place-items: center; color: #2563eb; font-weight: 900; margin-bottom: 18px;
+    }
+    .card h3 { margin: 0 0 8px; font-size: 19px; }
+    .card p { margin: 0; color: #667085; line-height: 1.6; font-size: 14px; }
+    .band { background: #eef5ff; }
+    .contact {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: stretch;
+    }
+    .contact-box {
+      background: white; border: 1px solid #dfe7f3; border-radius: 18px; padding: 30px;
+    }
+    .contact-box h2 { margin-top: 0; }
+    .contact-box p { color: #667085; line-height: 1.6; }
+    .demo-note {
+      border-left: 4px solid #2563eb; background: #f4f8ff; padding: 14px 16px;
+      border-radius: 8px; color: #46536a; font-size: 13px; line-height: 1.5;
+    }
+    footer { background: #0f172a; color: #aeb8c9; padding: 30px 24px; text-align: center; font-size: 13px; }
+    @media (max-width: 760px) {
+      .links { display: none; }
+      .hero-inner, .contact { grid-template-columns: 1fr; }
+      .cards { grid-template-columns: 1fr; }
+      .hero-inner { padding-top: 62px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="brand">ServiceFlow <span>HVAC</span></div>
+      <div class="links">
+        <a href="#services">Services</a>
+        <a href="#why">Why Us</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="eyebrow">24/7 HVAC SERVICE REQUESTS</div>
+        <h1>Comfort when you need it.</h1>
+        <p>
+          Fast, dependable heating and cooling service for homes and businesses.
+          Need help? Our AI receptionist can collect your service request any time of day.
+        </p>
+        <a class="cta" href="#contact">Request HVAC Service</a>
+      </div>
+      <div class="hero-card">
+        <h3>Need HVAC help?</h3>
+        <p>Tell our virtual receptionist what's going on and we'll collect the details needed for a team follow-up.</p>
+        <div class="check">✓ Air conditioning repair</div>
+        <div class="check">✓ Heating & furnace service</div>
+        <div class="check">✓ Maintenance</div>
+        <div class="check">✓ Installation inquiries</div>
+      </div>
+    </div>
+  </header>
+
+  <section id="services">
+    <div class="section-inner">
+      <div class="section-title">
+        <h2>HVAC services</h2>
+        <p>Professional help for common heating and cooling needs.</p>
+      </div>
+      <div class="cards">
+        <div class="card"><div class="icon">AC</div><h3>Air Conditioning</h3><p>Service requests for systems that aren't cooling properly, airflow concerns, and other AC issues.</p></div>
+        <div class="card"><div class="icon">HEAT</div><h3>Heating & Furnaces</h3><p>Request service for heating problems, furnace concerns, and seasonal maintenance.</p></div>
+        <div class="card"><div class="icon">+</div><h3>Maintenance & Install</h3><p>Maintenance and new-system inquiries can be collected for follow-up by the HVAC team.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="why" class="band">
+    <div class="section-inner">
+      <div class="section-title">
+        <h2>Simple. Fast. Available.</h2>
+        <p>A better first step for customers who need HVAC help.</p>
+      </div>
+      <div class="cards">
+        <div class="card"><h3>24/7 Lead Capture</h3><p>Visitors can start a service request even when the office is closed.</p></div>
+        <div class="card"><h3>Human-Friendly Questions</h3><p>The assistant collects the key details without overwhelming the customer.</p></div>
+        <div class="card"><h3>No Made-Up Answers</h3><p>The assistant avoids inventing prices, availability, policies, or technical diagnoses.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="section-inner contact">
+      <div class="contact-box">
+        <h2>Request service</h2>
+        <p>Use the ServiceFlow AI chat bubble in the corner to describe your HVAC issue and start a service request.</p>
+        <div class="demo-note">
+          DEMO SITE: This is a fictional ServiceFlow AI demonstration. It is not a real HVAC company's website, and no appointment is actually booked.
+        </div>
+      </div>
+      <div class="contact-box">
+        <h2>What to have ready</h2>
+        <p>Our receptionist may ask for your name, phone number, ZIP code, service needed, a brief description of the issue, and your preferred appointment time.</p>
+        <p><strong>Emergency situation?</strong> If there is an immediate hazard such as fire, smoke, or a gas odor, move to a safe location and contact the appropriate emergency service or qualified professional.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    ServiceFlow HVAC Demo · Built to demonstrate an AI receptionist workflow
+  </footer>
+
+  <!-- ServiceFlow AI / Chatbase widget -->
+  <script>
+  (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="cNHn8ngeWWXahgDeTvZMN";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+  </script>
+
+</body>
+</html>
